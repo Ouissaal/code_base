@@ -74,7 +74,7 @@ Le projet est construit sur une stack web classique et robuste, choisie pour sa 
 
 ## 👨‍💻 À Propos de Moi
 
-<img src="" alt="Ouissal Bouamar" width="150" style="float: left; margin-right: 1em; border-radius: 50%;"/>
+
 Bonjour ! Je suis Ouissal Bouamar, étudiante en première année passionnée par le développement web à ISTA Taza.
 
 J'ai créé le projet Dirlkhir comme application pratique des techniques de programmation, mais aussi comme moyen de contribuer à résoudre des problèmes réels dans la société. Je crois que la technologie peut rapprocher les gens et faire une vraie différence.
