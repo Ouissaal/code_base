@@ -503,6 +503,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['type'] ?? '') === 'consult
                             <input type="tel" class="form-control" name="telephone" required>
                         </div>
                         <div class="mb-3">
+                            <label class="form-label"><?php echo $translations[$lang]['email']; ?></label>
+                            <input type="email" class="form-control" name="email" value="<?= htmlspecialchars($_SESSION['user_email'] ?? '') ?>" required>
+                            <small class="form-text text-muted"><?php echo $translations[$lang]['email_help']; ?></small>
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label"><?php echo $translations[$lang]['need_description']; ?></label>
                             <textarea class="form-control" name="description" rows="4" required></textarea>
                         </div>
@@ -553,6 +558,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['type'] ?? '') === 'consult
                         <div class="mb-3">
                             <label class="form-label"><?php echo $translations[$lang]['phone']; ?></label>
                             <input type="tel" class="form-control" name="telephone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label"><?php echo $translations[$lang]['email']; ?></label>
+                            <input type="email" class="form-control" name="email" value="<?= htmlspecialchars($_SESSION['user_email'] ?? '') ?>" required>
+                            <small class="form-text text-muted"><?php echo $translations[$lang]['email_help']; ?></small>
                         </div>
                         <div class="mb-3">
                             <label class="form-label"><?php echo $translations[$lang]['describe_your_situation']; ?></label>

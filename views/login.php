@@ -1,14 +1,5 @@
 <?php require 'views/includes/header.php'; ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/bootstrap/css/bootstrap.min.css">
 
-</head>
-<body>
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -41,6 +32,5 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+
 <?php require 'views/includes/footer.php'; ?>

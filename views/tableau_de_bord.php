@@ -57,7 +57,7 @@ body, #dashboard-container {
 }
 .btn-outline-primary:hover, .btn-outline-success:hover {
     background:rgb(217, 216, 186);
-    color: #181f2a;
+    color: rgb(217, 216, 186) ;
 }
 
 .card-body i, .card-title i {
@@ -79,7 +79,7 @@ body, #dashboard-container {
                     <h1 class="display-4 mb-3">
                     <?php echo $translations[$lang]['bon_retour']; ?>, <?php echo htmlspecialchars($_SESSION['username']); ?>
                         <?php if ($total_offres >= 10): ?>
-                            <span class="ms-2" title="Vous êtes un héros de la solidarité !">
+                            <span class="ms-2 text-light" title="Vous êtes un héros de la solidarité !">
                                 <i class="fas fa-crown text-white" style="font-size: 1.2rem;"></i>
                             </span>
                         <?php endif; ?>
@@ -113,7 +113,7 @@ body, #dashboard-container {
                             <i class="fas fa-handshake fa-3x mb-3 "></i>
                             <h4 class="card-title"> <?php echo $translations[$lang]['demande_aide']; ?></h4>
                             <div class="display-5 fw-bold"><?php echo $total_help_requests; ?></div>
-                            <div class="text-muted small">Total des demandes de transport et d'aide financière</div>
+                            <div class="text-light small">Total des demandes de transport et d'aide financière</div>
                         </div>
                     </div>
                 </div>
@@ -125,28 +125,28 @@ body, #dashboard-container {
                         <div class="card-body">
                             <h5 class="card-title mb-3 fw-bold"><i class="fas fa-history me-1"></i> Demandes récentes de transport</h5>
                             <?php if (empty($recentTransport)): ?>
-                                <div class="text-muted text-center py-3">Aucune demande de transport récente.</div>
+                                <div class="text-light text-center py-3">Aucune demande de transport récente.</div>
                             <?php else: ?>
                                 <ul class="list-group list-group-flush">
                                     <?php foreach ($recentTransport as $demande): ?>
                                         <li class="list-group-item d-flex align-items-center">
                                             <i class="fas fa-shuttle-van text-info me-2"></i>
                                             <span class="fw-semibold flex-grow-1"><?php echo htmlspecialchars($demande['full_name']); ?> (<?php echo htmlspecialchars($demande['ville']); ?>)</span>
-                                            <span class="text-muted small ms-2"><?php echo date('d/m/Y', strtotime($demande['created_at'])); ?></span>
+                                            <span class="text-light small ms-2"><?php echo date('d/m/Y', strtotime($demande['created_at'])); ?></span>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
                             <?php endif; ?>
-                            <h5 class="card-title mt-4 mb-3 fw-bold"><i class="fas fa-hand-holding-usd me-1"></i> Demandes récentes d'aide financière</h5>
+                            <h5 class="card-title mt-4 mb-3 fw-bold"> Demandes récentes d'aide financière</h5>
                             <?php if (empty($recentFinancial)): ?>
-                                <div class="text-muted text-center py-3">Aucune demande d'aide financière récente.</div>
+                                <div class="text-light text-center py-3">Aucune demande d'aide financière récente.</div>
                             <?php else: ?>
                                 <ul class="list-group list-group-flush">
                                     <?php foreach ($recentFinancial as $demande): ?>
                                         <li class="list-group-item d-flex align-items-center">
                                             <i class="fas fa-hand-holding-usd text-success me-2"></i>
                                             <span class="fw-semibold flex-grow-1"><?php echo htmlspecialchars($demande['full_name']); ?> (<?php echo htmlspecialchars($demande['ville']); ?>)</span>
-                                            <span class="text-muted small ms-2"><?php echo date('d/m/Y', strtotime($demande['created_at'])); ?></span>
+                                            <span class="text-light small ms-2"><?php echo date('d/m/Y', strtotime($demande['created_at'])); ?></span>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
@@ -165,7 +165,7 @@ body, #dashboard-container {
                             <i class="fas fa-hand-holding-heart fa-3x mb-3 "></i>
                             <h4 class="card-title"> <?php echo $translations[$lang]['offre_aide']; ?></h4>
                             <div class="display-5 fw-bold"><?php echo $total_offres; ?></div>
-                            <div class="text-muted small"><?php echo $translations[$lang]['dashboard_total_offres_description']; ?></div>
+                            <div class="text-light small"><?php echo $translations[$lang]['dashboard_total_offres_description']; ?></div>
                         </div>
                     </div>
                 </div>
@@ -177,7 +177,7 @@ body, #dashboard-container {
                         <div class="card-body">
                             <h5 class="card-title mb-3 fw-bold"><i class="fas fa-hands-helping me-1"></i><?php echo $translations[$lang]['offre_récentes']; ?> </h5>
                             <?php if (empty($dernieres_offres)): ?>
-                                <div class="text-muted text-center py-3"><?php echo $translations[$lang]['dashboard_no_recent_offer']; ?></div>
+                                <div class="text-light text-center py-3"><?php echo $translations[$lang]['dashboard_no_recent_offer']; ?></div>
                             <?php else: ?>
                                 <ul class="list-group list-group-flush">
                                     <?php foreach ($dernieres_offres as $offre): ?>

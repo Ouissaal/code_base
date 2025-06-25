@@ -16,7 +16,7 @@ if (!isset($_SESSION['lang'])) {
 $lang = $_SESSION['lang'];
 require_once 'views/includes/languages.php';
 
-// ... your class AuthController { ... }
+
 // Language translations
 $translations = [
 

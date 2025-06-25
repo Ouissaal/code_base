@@ -88,62 +88,68 @@ class UserController {
     
     public function editProfile() {
         global $translations, $lang, $pdo;
-
+    
         if (!isset($_SESSION['user_id'])) {
             header('Location: index.php?controller=auth&action=login');
             exit;
         }
-
+    
         $user_id = $_SESSION['user_id'];
         $error = '';
         $success = '';
         $user = [];
-
+    
         // Fetch current user info
         try {
             $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE id = ?");
             $stmt->execute([$user_id]);
             $user = $stmt->fetch();
-        } catch(PDOException $e) {
-            $error = $translations[$lang]['profile_error'];
+    
+            // Vérification que l'utilisateur existe
+            if (!$user) {
+                $error = $translations[$lang]['user_not_found'] ?? 'Utilisateur introuvable.';
+            }
+        } catch (PDOException $e) {
+            $error = $translations[$lang]['profile_error'] ?? 'Erreur lors de la récupération du profil.';
         }
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($error)) {
             $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
             $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
             $current_password = $_POST['current_password'] ?? '';
             $new_password = $_POST['new_password'] ?? '';
             $confirm_password = $_POST['confirm_password'] ?? '';
-
+    
             if (empty($username) || empty($email)) {
-                $error = $translations[$lang]['all_fields_required'];
+                $error = $translations[$lang]['all_fields_required'] ?? 'Tous les champs sont requis.';
             } else {
                 try {
                     // Check if username is already used by another user
                     $stmt = $pdo->prepare("SELECT COUNT(*) FROM utilisateur WHERE username = ? AND id != ?");
                     $stmt->execute([$username, $user_id]);
                     if ($stmt->fetchColumn() > 0) {
-                        $error = $translations[$lang]['username_already_exists'];
+                        $error = $translations[$lang]['username_already_exists'] ?? 'Nom d\'utilisateur déjà utilisé.';
                     } else {
                         // Check if email is already used by another user
                         $stmt = $pdo->prepare("SELECT COUNT(*) FROM utilisateur WHERE email = ? AND id != ?");
                         $stmt->execute([$email, $user_id]);
                         if ($stmt->fetchColumn() > 0) {
-                            $error = $translations[$lang]['email_already_exists'];
+                            $error = $translations[$lang]['email_already_exists'] ?? 'Email déjà utilisé.';
                         } else {
-                            // If a new password is provided
+                            // Si un mot de passe actuel est fourni
                             if (!empty($current_password)) {
-                                // Check old password
-                                if (!password_verify($current_password, $user['password'])) {
-                                    $error = $translations[$lang]['current_password_incorrect'];
+                                if (!$user || !isset($user['password'])) {
+                                    $error = $translations[$lang]['user_not_found'] ?? 'Utilisateur introuvable.';
+                                } elseif (!password_verify($current_password, $user['password'])) {
+                                    $error = $translations[$lang]['current_password_incorrect'] ?? 'Mot de passe actuel incorrect.';
                                 } elseif (empty($new_password) || empty($confirm_password)) {
-                                    $error = $translations[$lang]['new_password_required'];
+                                    $error = $translations[$lang]['new_password_required'] ?? 'Nouveau mot de passe requis.';
                                 } elseif ($new_password !== $confirm_password) {
-                                    $error = $translations[$lang]['passwords_not_match'];
+                                    $error = $translations[$lang]['passwords_not_match'] ?? 'Les mots de passe ne correspondent pas.';
                                 } elseif (strlen($new_password) < 8) {
-                                    $error = $translations[$lang]['password_too_short'];
+                                    $error = $translations[$lang]['password_too_short'] ?? 'Le mot de passe est trop court.';
                                 } else {
-                                    // Update with new password
+                                    // Mettre à jour avec nouveau mot de passe
                                     $stmt = $pdo->prepare("
                                         UPDATE utilisateur 
                                         SET username = ?, email = ?, password = ? 
@@ -155,10 +161,10 @@ class UserController {
                                         password_hash($new_password, PASSWORD_DEFAULT),
                                         $user_id
                                     ]);
-                                    $success = $translations[$lang]['profile_updated'];
+                                    $success = $translations[$lang]['profile_updated'] ?? 'Profil mis à jour avec succès.';
                                 }
                             } else {
-                                // Update without changing password
+                                // Mise à jour sans mot de passe
                                 $stmt = $pdo->prepare("
                                     UPDATE utilisateur 
                                     SET username = ?, email = ? 
@@ -169,28 +175,28 @@ class UserController {
                                     $email,
                                     $user_id
                                 ]);
-                                $success = $translations[$lang]['profile_updated'];
+                                $success = $translations[$lang]['profile_updated'] ?? 'Profil mis à jour avec succès.';
                             }
-
-                            // Update session info if no error
+    
+                            // Mise à jour session et utilisateur si tout est OK
                             if (empty($error)) {
                                 $_SESSION['username'] = $username;
                                 $_SESSION['email'] = $email;
-                                // Refresh user data
                                 $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE id = ?");
                                 $stmt->execute([$user_id]);
                                 $user = $stmt->fetch();
                             }
                         }
                     }
-                } catch(PDOException $e) {
-                    $error = $translations[$lang]['update_error'];
+                } catch (PDOException $e) {
+                    $error = $translations[$lang]['update_error'] ?? 'Erreur lors de la mise à jour du profil.';
                 }
             }
         }
-
+    
         require 'views/modifier_profil.php';
     }
+    
     
     public function changePassword() {
         global $translations, $lang;

@@ -53,6 +53,7 @@
     </div>
 </div>
 
+
 <!--  Don -->
 
 <div class="modal fade" id="donModal" tabindex="-1">
@@ -265,6 +266,12 @@
                         <label class="form-label"><?php echo $translations[$lang]['phone']; ?></label>
                         <input type="tel" class="form-control" name="telephone" required>
                     </div>
+                    <div class="mb-3">
+                            <label class="form-label"><?php echo $translations[$lang]['email']; ?></label>
+                            <input type="email" class="form-control" name="email" value="<?= htmlspecialchars($_SESSION['user_email'] ?? '') ?>" required>
+                            <small class="form-text text-muted"><?php echo $translations[$lang]['email_help']; ?></small>
+                        </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $translations[$lang]['close']; ?></button>
@@ -356,6 +363,12 @@
                         <label class="form-label"><?php echo $translations[$lang]['phone']; ?> *</label>
                         <input type="tel" class="form-control" name="telephone" required>
                     </div>
+
+                    <div class="mb-3">
+                            <label class="form-label"><?php echo $translations[$lang]['email']; ?></label>
+                            <input type="email" class="form-control" name="email" value="<?= htmlspecialchars($_SESSION['user_email'] ?? '') ?>" required>
+                            <small class="form-text text-muted"><?php echo $translations[$lang]['email_help']; ?></small>
+                        </div>
 
                     <div class="mb-3">
                         <label class="form-label"><?php echo $translations[$lang]['medical_certificate']; ?></label>
