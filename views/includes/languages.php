@@ -3300,7 +3300,18 @@ DIR LKHIR n\'est pas qu\'une plateforme, c\'est le cœur battant d\'une communau
 
        'consultation_thank_you' => 'Merci ! Votre demande de consultation a été envoyée. Nous attendons la réponse du médecin.',
 
+       'bon_retour' => 'Bon retour',
+       'demande_aide' => "Demandes d'aide",
+       'offre_aide' => "Offres d'aide",
+       'dashboard_total_offres_description' => 'Nombre total des offres actives',
+       'offre_récentes' => 'Offres récentes',
+       'dashboard_no_recent_offer' => 'Aucune offre récente disponible.',
 
+       'besoin_aide' => "J'ai besoin d'aide",
+       'envie_aide' => "Je veux aider",
+       'totale_demande_aide' => "Total de vos demandes d'aide",
+       'Demandes_récentes' => "Demandes récentes",
+       'Aucun_demande' => "Aucune demande récente disponible.",
 
 
     ],
@@ -3963,6 +3974,19 @@ DIR LKHIR n\'est pas qu\'une plateforme, c\'est le cœur battant d\'une communau
         'login_required_financial' => "يجب تسجيل الدخول لطلب مساعدة مالية.",
         'consultation_thank_you' => 'شكراً! تم إرسال طلب الاستشارة الخاص بك. نحن في انتظار رد الطبيب.',
 
+
+        'bon_retour' => 'مرحبا بعودتك',
+        'demande_aide' => 'طلبات المساعدة',
+        'offre_aide' => 'عروض المساعدة',
+        'dashboard_total_offres_description' => 'إجمالي عدد العروض النشطة',
+        'offre_récentes' => 'عروض حديثة',
+        'dashboard_no_recent_offer' => 'لا توجد عروض حديثة متاحة.',
+
+        'besoin_aide' => "أنا بحاجة للمساعدة",
+        'envie_aide' => "أريد المساعدة",
+        'totale_demande_aide' => "مجموع طلبات المساعدة الخاصة بك",
+        'Demandes_récentes' => "الطلبات الأخيرة",
+        'Aucun_demande' => "لا توجد طلبات حديثة متاحة.",
 
     ],
 
@@ -4632,8 +4656,21 @@ DIR LKHIR is not just a platform, it\'s the beating heart of a united community.
         'login_required_financial' => "You must be logged in to request financial help.",
 
         'consultation_thank_you' => 'Thank you! Your consultation request has been submitted. We are waiting for the doctor\'s response.',
+
+        'bon_retour' => 'Welcome back',
+        'demande_aide' => "Help requests",
+        'offre_aide' => "Help offers",
+        'dashboard_total_offres_description' => 'Total number of active offers',
+        'offre_récentes' => 'Recent offers',
+        'dashboard_no_recent_offer' => 'No recent offers available.',
+
             
 
+        'besoin_aide' => 'I need help',
+        'envie_aide' => 'I want to help',
+        'totale_demande_aide' => 'Total help requests',
+        'Demandes_récentes' => 'Recent requests',
+        'Aucun_demande' => 'No recent requests available.',
     ],
 ];
 
@@ -4947,6 +4984,8 @@ $translations['offer_success'] = [
     'ar' => 'تم تسجيل عرضك بنجاح',
     'en' => 'Your offer has been successfully recorded'
 ];
+
+
 
 // Helper function to get translation
 function __($key) {

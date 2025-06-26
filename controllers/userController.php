@@ -33,9 +33,13 @@ class UserController {
                     SELECT id FROM consultation WHERE utilisateur_id = ?
                     UNION ALL
                     SELECT id FROM besoin_sang WHERE utilisateur_id = ?
+                    UNION ALL
+                    SELECT id FROM besoin_transport WHERE utilisateur_id = ?
+                    UNION ALL
+                    SELECT id FROM besoin_financier WHERE utilisateur_id = ?
                 ) as all_demandes
             ");
-            $stmt->execute([$user_id, $user_id, $user_id]);
+            $stmt->execute([$user_id, $user_id, $user_id, $user_id, $user_id]);
             $total_demandes = $stmt->fetch()['total_demandes'];
 
             // Nombre total d'offres d'aide
@@ -60,9 +64,15 @@ class UserController {
                 UNION ALL
                 (SELECT 'besoin_sang' as type, groupe_sanguin as titre, date_necessaire as date, urgence, created_at
                 FROM besoin_sang WHERE utilisateur_id = ?)
+                UNION ALL
+                (SELECT 'besoin_transport' AS type, description AS titre, created_at AS date, NULL AS urgence, created_at
+                FROM besoin_transport WHERE utilisateur_id = ?)
+                UNION ALL
+                (SELECT 'besoin_financier' AS type, description AS titre, created_at AS date, NULL AS urgence, created_at
+                FROM besoin_financier WHERE utilisateur_id = ?)
                 ORDER BY created_at DESC LIMIT 5
             ");
-            $stmt->execute([$user_id, $user_id, $user_id]);
+            $stmt->execute([$user_id, $user_id, $user_id, $user_id, $user_id]);
             $dernieres_demandes = $stmt->fetchAll();
 
             // Dernières offres d'aide
@@ -80,11 +90,12 @@ class UserController {
             $stmt->execute([$user_id, $user_id, $user_id]);
             $dernieres_offres = $stmt->fetchAll();
         } catch(PDOException $e) {
-            $error = $translations[$lang]['dashboard_error'];
+            $error = $translations[$lang]['dashboard_error'] . $e->getMessage();
         }
-
+    
         require 'views/tableau_de_bord.php';
     }
+    
     
     public function editProfile() {
         global $translations, $lang, $pdo;

@@ -16,7 +16,7 @@ $currentYear = date('Y');
                     <h4><?php echo $translations[$lang]['quick_links']; ?></h4>
                     <ul>
                         <li><a href="index.php"><?php echo $translations[$lang]['home']; ?></a></li>
-                        <li><a href="blog.php"><?php echo $translations[$lang]['blog']; ?></a></li>
+                        <li><a  href="index.php?controller=auth&action=blog"><?php echo $translations[$lang]['blog']; ?></a></li>
                     </ul>
                 </div>
 

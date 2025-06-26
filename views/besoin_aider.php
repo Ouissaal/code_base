@@ -325,6 +325,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['type'] ?? '') === 'consult
 <div class="modal fade" id="consultationModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
+        <?php if (!isset($_SESSION['user_id'])): ?>
+                <div class="modal-header">
+                    <h5 class="modal-title"><?php echo $translations[$lang]['login_required_title']; ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p><?php echo $translations[$lang]['login_required_medicament']; ?></p>
+                    <div class="d-grid gap-2">
+                        <a href="index.php?action=login" class="btn btn-primary"><?php echo $translations[$lang]['login']; ?></a>
+                        <a href="index.php?action=register" class="btn btn-secondary"><?php echo $translations[$lang]['register']; ?></a>
+                    </div>
+                </div>
+            <?php else: ?>
             <div class="modal-header">
                 <h5 class="modal-title"><?php echo $translations[$lang]['consultation_request']; ?></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -459,6 +472,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['type'] ?? '') === 'consult
                         <button type="submit" class="btn btn-success"><?php echo $translations[$lang]['send_request']; ?></button>
                     </div>
                 </form>
+            <<?php endif; ?>
             </div>
         </div>
     </div>
