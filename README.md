@@ -3,6 +3,8 @@
 # Dirlkhir - Une initiative qui peut tout changer
 
 Une plateforme communautaire visant à combler le fossé dans l'accès aux soins de santé en facilitant le don d'argent et de transport ainsi que le don de sang, avec le support de trois langues principales : arabe, français et anglais, permettant à l'utilisateur de choisir facilement la langue qui lui convient, rendant ainsi la plateforme plus inclusive et accessible à toutes les catégories de la société.
+
+
 Découvrez la plateforme en ligne ici : [springgreen-finch-412957.hostingersite.com](https://springgreen-finch-412957.hostingersite.com/)
 
 
