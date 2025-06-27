@@ -11,6 +11,7 @@ Une plateforme communautaire visant à combler le fossé dans l'accès aux soins
 - [✨ Fonctionnalités](#-fonctionnalités)
 - [🛡️ Sécurité](#-sécurité)
 - [🌐 Multilinguisme](#-multilinguisme)
+- [Évolutions Futures ](#-Évolutions-Futures)
 - [🚀 Technologies Utilisées](#-technologies-utilisées)
 - [👨‍💻 À Propos de Moi](#-à-propos-de-moi)
 
@@ -18,26 +19,24 @@ Une plateforme communautaire visant à combler le fossé dans l'accès aux soins
 
 ## 🎯 Objectif
 
-Dans notre société, beaucoup de personnes rencontrent d'importantes difficultés à accéder aux soins de santé de base, notamment en ce qui concerne le don d'argent et de transport ainsi que le don urgent de sang. Les contraintes financières, la localisation géographique et le manque d'information créent des lacunes critiques.
+Dans notre société, beaucoup de personnes rencontrent de grandes difficultés pour accéder aux soins de santé, notamment pour les dons d'argent, de transport ou de sang. Les obstacles financiers, la distance géographique et le manque d'information créent de réels problèmes.
 
-Dirlkhir a été créé pour résoudre ce paradoxe. Notre but est de construire une plateforme complète, sécurisée et facile à utiliser qui connecte :
+La plateforme Dirlkhir a été créée pour répondre à ce besoin. Notre objectif est de construire une plateforme simple, sécurisée et facile à utiliser, qui connecte :
 
-- Les personnes ayant besoin d'aide financière ou de moyens de transport.
-- Les hôpitaux et patients nécessitant du sang avec des donneurs prêts à sauver des vies.
+Les personnes ayant besoin d'aide financière, de sang ou de moyens de transport
 
-Nous visons à améliorer l'accès aux soins et à bâtir une communauté solidaire où aucun appel à l'aide n'est ignoré.
+Les patients et personnes à la recherche de sang, avec des donneurs prêts à aider et sauver des vies
+
+Nous souhaitons ainsi faciliter l'accès aux soins et bâtir une communauté solidaire où aucun appel à l'aide n'est ignoré.
 
 ## ✨ Fonctionnalités principales de la plateforme Dirlkhir
+
 Nous ne proposons pas seulement une plateforme, mais utilisons les meilleures pratiques technologiques pour garantir qualité, sécurité et performance :
 
 - **Architecture MVC (Modèle-Vue-Contrôleur)** :
   Séparation claire entre la logique métier, l'interface utilisateur et le contrôle, ce qui rend le code organisé et évolutif.
 - **Connexion sécurisée avec gestion des sessions** :
   Protection des données personnelles et suivi des opérations pour garantir la transparence.
-- **Demandes d'aide et de sang avec jumelage intelligent** :
-  Correspondance précise entre demandes et donneurs selon la localisation, le type de don et le degré d'urgence.
-- **Registre dynamique des donneurs de sang** :
-  Base de données mise à jour automatiquement pour une réponse rapide aux urgences.
 - **Interface utilisateur responsive et moderne** :
   Conçue avec Bootstrap 5 pour une expérience fluide sur tous types d'appareils.
 
@@ -58,8 +57,35 @@ La plateforme Dirlkhir offre la possibilité de choisir entre arabe, français e
 
 - Sélection de langue simple et intuitive
 - Traductions professionnelles et précises
-- Extension de la portée utilisateur
-- Intégration avec les messages de sécurité pour une expérience cohérente
+
+
+## 🔮Évolutions Futures
+La plateforme Dirlkhir est conçue pour évoluer constamment et répondre aux besoins croissants de sa communauté. Parmi les fonctionnalités envisagées pour les prochaines versions :
+
+- **Architecture Microservices** 
+Pour une meilleure scalabilité, maintenabilité et performance, nous prévoyons de migrer progressivement vers une architecture basée sur des microservices. Cela permettra :
+
+Une indépendance des modules (gestion des dons, utilisateurs, notifications…)
+Un déploiement plus rapide et ciblé
+Une tolérance accrue aux pannes
+
+
+- **Intégration d'un Chatbot Intelligent** 
+Mise en place d’un assistant virtuel alimenté par l’IA pour :
+
+Aider les utilisateurs à trouver rapidement ce dont ils ont besoin
+Répondre aux questions fréquentes en temps réel
+Guider les nouveaux utilisateurs pas à pas dans l’utilisation de la plateforme
+
+- **Application mobile (Android/iOS)** 
+Pour améliorer l’accessibilité et l’expérience utilisateur, une application mobile native est également en réflexion.
+
+- **Notifications en temps réel**  
+Grâce à WebSocket ou Firebase, pour alerter immédiatement les utilisateurs en cas d’urgence (besoin urgent de sang, nouvelle demande de transport, etc.)
+
+- **Tableau de bord administratif avancé** 
+Avec statistiques, suivi des dons, gestion des utilisateurs et alertes de sécurité.
+
 
 ## 🚀 Technologies Utilisées
 
@@ -69,11 +95,10 @@ Le projet est construit sur une stack web classique et robuste, choisie pour sa 
     -   Ce modèle sépare la logique de l'application, la gestion des données et l'interface utilisateur. Cette séparation conduit à un code plus propre, plus facile à maintenir et facilite le travail d'équipe.
 -   **Backend** : **PHP**
 -   **Base de données** : **MySQL** (avec PDO pour des connexions sécurisées)
--   **Frontend** : **HTML5**, **CSS3**, **JavaScript**, **Bootstrap 5**
+-   **Frontend** : **HTML**, **CSS**, **JavaScript**, **Bootstrap**
 -   **Serveur** : **XAMPP / Apache**
 
 ## 👨‍💻 À Propos de Moi
-
 
 Bonjour ! Je suis Ouissal Bouamar, étudiante en première année passionnée par le développement web à ISTA Taza.
 
