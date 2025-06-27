@@ -10,7 +10,7 @@ require_once __DIR__ . '/../PHPMailer/src/SMTP.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['type'] ?? '') === 'consultation') {
     $fullName = $_POST['full_name'] ?? '';
     $userEmail = $_POST['email'] ?? '';
-    $adminEmail = 'bouamar.ouissal10@gmail.com'; // Email destinataire (admin)
+    $adminEmail = 'bouamar.ouissal10@gmail.com'; 
 
     $message = "Nouvelle demande de consultation de $fullName\nEmail: $userEmail\n";
 
@@ -808,9 +808,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-</script>
 
-<script>
 const consultationThankYou = <?php echo json_encode($translations[$lang]['consultation_thank_you']); ?>;
 </script>
 

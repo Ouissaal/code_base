@@ -3,7 +3,6 @@
 require_once 'models/db.php';
 require_once 'models/User.php';
 
-// Add this block:
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -17,10 +16,10 @@ $lang = $_SESSION['lang'];
 require_once 'views/includes/languages.php';
 
 
-// Language translations
+
 $translations = [
 
-// frensh
+// frensh --------------------------------------------------------------------------------------------------------------------------
     'fr' => [
         'help_platform' => 'DIR LKHIR',
         'hero_subtitle' => 'Un geste peut tout changer',
