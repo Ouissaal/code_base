@@ -135,7 +135,7 @@ Le projet est construit sur une stack web classique et robuste, choisie pour sa 
 -   **Frontend** : **HTML**, **CSS**, **JavaScript**, **Bootstrap**
 -   **Serveur** : **XAMPP / Apache**
 
-## 👨‍💻 À Propos de Moi
+## 👩🏻‍💻 À Propos de Moi
 
 Bonjour ! Je suis Ouissal Bouamar, étudiante en première année passionnée par le développement web à ISTA Taza.
 
