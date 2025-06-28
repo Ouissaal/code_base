@@ -11,6 +11,7 @@ Découvrez la plateforme en ligne ici : [springgreen-finch-412957.hostingersite.
 ## Table des Matières
 - [🎯 Objectif](#-objectif)
 - [✨ Fonctionnalités](#-fonctionnalités)
+- [✨ Avantages](#-Avantages)
 - [🛡️ Sécurité](#-sécurité)
 - [🌐 Multilinguisme](#-multilinguisme)
 - [Évolutions Futures ](#-Évolutions-Futures)
@@ -33,6 +34,40 @@ Nous souhaitons ainsi faciliter l'accès aux soins et bâtir une communauté sol
 
 ## ✨ Fonctionnalités principales de la plateforme Dirlkhir
 
+La plateforme met en relation les personnes dans le besoin (don de sang, aide financière, transport ..) avec des volontaires prêts à aider.
+
+- Meilleur accès aux soins de santé :
+Elle aide à surmonter les obstacles financiers, géographiques ou liés au manque d’information.
+
+- Simplicité et sécurité :
+Un outil facile à utiliser, conçu pour garantir la confidentialité et la protection des données.
+
+- Réponse aux urgences :
+Facilite le don de sang, notamment en cas d’urgence vitale.
+
+- Transport solidaire :
+Permet aux patients sans moyens de se rendre à leurs rendez-vous médicaux.
+
+- Communauté multilingue et inclusive :
+Accessible en arabe, français et anglais pour atteindre un public plus large.
+
+- Aucun appel ignoré :
+Chaque demande d’aide est prise en compte afin que personne ne soit laissé de côté.
+
+
+- Consultations médicales gratuites (en présentiel ou à distance)
+Assurées par des médecins bénévoles pour orienter et accompagner les patients, notamment dans les cas urgents ou nécessitant un soutien psychologique.
+
+- Don d’argent :
+Aide financière directe pour couvrir les frais de soins, d’examens ou d’interventions médicales.
+
+- Aide à l’achat de médicaments :
+Soutien aux personnes démunies pour se procurer leurs traitements, sous réserve de la présentation d’une ordonnance médicale.
+
+
+
+ ## ✨ Avantages de la plateforme Dirlkhir
+
 Nous ne proposons pas seulement une plateforme, mais utilisons les meilleures pratiques technologiques pour garantir qualité, sécurité et performance :
 
 - **Architecture MVC (Modèle-Vue-Contrôleur)** :
@@ -42,7 +77,7 @@ Nous ne proposons pas seulement une plateforme, mais utilisons les meilleures pr
 - **Interface utilisateur responsive et moderne** :
   Conçue avec Bootstrap 5 pour une expérience fluide sur tous types d'appareils.
 
-## 🛡️ Sécurité avancée
+## 🛡️ Sécurisation
 Nous accordons une grande importance à la protection des données et à la sécurité des utilisateurs via :
 
 - **Requêtes préparées (Prepared Statements) avec PDO** :
@@ -96,7 +131,7 @@ Le projet est construit sur une stack web classique et robuste, choisie pour sa 
 -   **Architecture** : **Modèle-Vue-Contrôleur (MVC)**
     -   Ce modèle sépare la logique de l'application, la gestion des données et l'interface utilisateur. Cette séparation conduit à un code plus propre, plus facile à maintenir et facilite le travail d'équipe.
 -   **Backend** : **PHP**
--   **Base de données** : **MySQL** (avec PDO pour des connexions sécurisées)
+-   **Base de données** : **PDO** pour des connexions sécurisées
 -   **Frontend** : **HTML**, **CSS**, **JavaScript**, **Bootstrap**
 -   **Serveur** : **XAMPP / Apache**
 
