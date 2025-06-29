@@ -14,9 +14,9 @@ Découvrez la plateforme en ligne ici : [springgreen-finch-412957.hostingersite.
 - [✨ Avantages](#-Avantages)
 - [🛡️ Sécurité](#-sécurité)
 - [🌐 Multilinguisme](#-multilinguisme)
-- [Évolutions Futures ](#-Évolutions-Futures)
+- [🚀 Évolutions Futures ](#-Évolutions-Futures)
 - [🚀 Technologies Utilisées](#-technologies-utilisées)
-- [👨‍💻 À Propos de Moi](#-à-propos-de-moi)
+- [👩🏻‍💻 À Propos de Moi](#-à-propos-de-moi)
 
 
 
